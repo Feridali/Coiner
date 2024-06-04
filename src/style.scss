@@ -74,6 +74,33 @@ img {
     line-height: 54px;
   }
 }
+@keyframes rotating {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.home-search-input {
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 24px;
+    animation: 2s rotating infinite linear;
+    opacity: 0;
+    transition: 0.2s opacity;
+  }
+
+  &.searching svg {
+    opacity: 1;
+  }
+}
+
 .home-cryptos {
   padding: 60px;
   h2 {
